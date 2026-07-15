@@ -1,0 +1,19 @@
+clipboard-reader/
+├── .env                     # API key for voice engine, if using a cloud one
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── main.py                  # starts the hotkey listener, keeps the app running
+│
+├── capture/
+│   ├── hotkey_listener.py   # registers global hotkey, fires event on press
+│   └── clipboard_reader.py  # reads current clipboard content
+│
+├── voice/
+│   └── tts_engine.py        # takes text, sends to TTS, plays audio
+│
+├── services/
+│   └── reading_service.py   # on hotkey → get clipboard text → call tts_engine
+│
+└── utils/
+    └── config.py            # loads .env, any constants (voice choice, etc.)

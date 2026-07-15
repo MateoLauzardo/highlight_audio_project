@@ -1,0 +1,5 @@
+# Add runtime dependencies here.
+pyperclip
+uiautomation
+pynput
+keyboard
