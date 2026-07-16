@@ -24,6 +24,7 @@ def copy_text():
     # give the OS a moment to put the selection on the clipboard
     time.sleep(0.1)
 
+    # the text that is copied
     tmp_value = pyperclip.paste()
-    print("Clipboard content (ctrl+c): ", tmp_value)
+    
     return tmp_value

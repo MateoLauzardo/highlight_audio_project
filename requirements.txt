@@ -3,3 +3,6 @@ pyperclip
 uiautomation
 pynput
 keyboard
+transformers
+torch
+scipy
