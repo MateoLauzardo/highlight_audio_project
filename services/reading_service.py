@@ -1,6 +1,7 @@
 from transformers import pipeline
 import scipy.io.wavfile
 import numpy as np
+from services.play_audio_outload import play_audio_from_text
 
 
 # reliable neural TTS that runs on Windows via the transformers pipeline.
@@ -14,8 +15,7 @@ def make_audio_from_text(text):
     # Generate speech from text
     audio = pipe(text)
 
-    # the model gives raw sound numbers, sometimes shaped like [[...]].
-    # np.squeeze flattens that to a plain 1-D list of samples scipy can save.
+   
     samples = np.squeeze(audio["audio"])
 
     # saved audio file
@@ -24,3 +24,8 @@ def make_audio_from_text(text):
         rate=audio["sampling_rate"],   # how fast to play the samples
         data=samples,                  # the raw sound numbers
     )
+    
+    # passes in file name to play_audio_from_text, which will play the audio file
+    play_audio_from_text("output.wav")
+    
+ 
